@@ -21,15 +21,15 @@ export default function Home() {
   };
 
   return (
-    <main className="p-6 space-y-6">
-      <Checklist onApply={applyConditions} />
-      <div className="grid grid-cols-3 gap-4">
-        <div className="p-4 bg-gray-100 rounded-lg text-center">✅ {selectedConditions.length} Conditions Met</div>
-        <div className="p-4 bg-gray-100 rounded-lg text-center">📊 Top Setup: {probData[0].probability}%</div>
-        <div className="p-4 bg-gray-100 rounded-lg text-center">⏱️ Avg Hold: 15min</div>
-      </div>
-      <ProbabilityChart data={probData} />
-      <EdgeTracker />
-    </main>
+import OutcomeFlowViewer from './components/OutcomeFlowViewer';
+
+function App() {
+  return (
+    <div className="p-6">
+      <OutcomeFlowViewer selectedOutcome="VWAP Rejection" />
+    </div>
   );
 }
+
+export default App;
+
